@@ -1,6 +1,6 @@
 # Vibe Coding Guidelines
 
-This document describes how a human **vibe coder** works together with AI agents to create a software product in a structured but lightweight way. The method is built around a small set of **artifacts**—shared documents in the repository that guide and record the process. Artifacts evolve as the project evolves, and they keep knowledge available to all agents and contributors.
+This document describes how a human **vibe coder** works together with AI agents to create a software product using a quality-focused, structured approach that prevents the productivity losses common in unstructured development. The method is built around a small set of **artifacts**—shared documents in the repository that guide and record the process. Artifacts evolve as the project evolves, and they keep knowledge available to all agents and contributors.
 
 ## Purpose of the Artifacts
 
