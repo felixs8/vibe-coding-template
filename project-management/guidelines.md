@@ -52,6 +52,7 @@ The architecture document ensures that every contributor works from the same tec
 The definition of done artifact describes **what it means for work to be finished**. It sets the quality standard for tasks.
 
 Examples of items that may be included:
+
 - The project builds without errors.
 - The acceptance criteria for the task are fulfilled.
 - All automated tests pass, including those from previous tasks.
@@ -64,6 +65,7 @@ The definition of done may change as the team gains experience, but it always fu
 The documentation artifact describes the **current state of the system**. It complements the requirements (future) and the architecture (design) by recording what actually exists now.
 
 It may include:
+
 - A list of files and their purpose.
 - Features currently implemented.
 - Known placeholders or temporary code marked for removal.
@@ -74,21 +76,30 @@ Documentation is updated incrementally, task by task.
 
 ### Tasks in Detail
 
-Tasks are the **unit of progress**. Every task describes one increment of work and records its own outcome.
+Tasks are the **unit of progress**. Every task describes one increment of work and records its own outcome, including the review process.
 
 - Each task is stored as a separate file in the repository.
 - Files are named and ordered numerically: `task1.md`, `task2.md`, `task3.md`, and so on.
 - A task file contains:
   - The description of the task.
   - Its acceptance criteria (including which are automated).
-  - Its status (*Planned*, *Ready*, *In Progress*, *Done*).
+  - Its status (_Planned_, _Ready_, _In Progress_, _In Review_, _Done_).
+  - Implementation details documenting all files changed.
+  - Review notes from the reviewer agent.
   - References to code, tests, and documentation updated by this task.
 
-Together the tasks form a step-by-step history of how the product was built.
+The review process ensures code quality by having a dedicated reviewer agent validate that:
+
+- All acceptance criteria are truly met
+- Tests are meaningful and would fail if the feature broke
+- No shortcuts were taken that compromise quality
+- The Definition of Done is satisfied
+
+Together the tasks form a step-by-step history of how the product was built, including the quality assurance process.
 
 ## Step 1: Business Analysis
 
-The first step is to clarify the requirements. In this phase, the AI agent takes the role of business analyst. The purpose is to figure out *what* we want to build. The output is the **requirements artifact**, a document that lists the current understanding of the product.
+The first step is to clarify the requirements. In this phase, the AI agent takes the role of business analyst. The purpose is to figure out _what_ we want to build. The output is the **requirements artifact**, a document that lists the current understanding of the product.
 
 The requirements document does not have to be complete. It is expected to change as we learn more. What matters is that we always have a shared artifact that reflects our current understanding of the system.
 
@@ -102,16 +113,34 @@ Like requirements, architecture is not fixed forever. It evolves as the system e
 
 The third step defines how we decide that work is finished. This is written down in the **definition of done artifact**.
 
-## Step 4: Task Cycle
+## Step 4: Task Cycle with Review Process
 
-Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task.
+Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task and includes a dedicated review phase to ensure code quality.
+
+### Phase 1: Planning and Implementation
 
 1. **Analysis and Planning** – The AI agent and the vibe coder decide what the next task should be. The AI challenges the scope, suggests smaller steps, and asks clarifying questions.
-2. **Acceptance Criteria** – Once the task is clear, acceptance criteria are written. Some of these criteria will be automated tests. When the criteria are defined and agreed on, the task is marked *Ready*.
-3. **Implementation** – The AI agent acting as vibe coder carries out the work. It ensures that the project builds, all relevant tests pass, and the definition of done is satisfied.
+2. **Acceptance Criteria** – Once the task is clear, acceptance criteria are written. Some of these criteria will be automated tests. When the criteria are defined and agreed on, the task is marked _Ready_.
+3. **Implementation** – The AI agent acting as **coder** carries out the work. It ensures that the project builds, all relevant tests pass, and the definition of done is satisfied.
 4. **Documentation Update** – As part of the task, the documentation artifact is updated.
-5. **Task File Update** – The task artifact is updated with final status, acceptance results, and references to changes.
-6. **Review and Check-in** – The human reviews the result. If accepted, the work is committed to the repository.
+5. **Task File Update** – The coder documents all changes made, including which files were modified, created, or deleted. The task status is changed to _In Review_.
+
+### Phase 2: Review Process
+
+6. **Switch to Reviewer Agent** – A second AI agent takes the role of **reviewer**. This can be done in a separate VS Code window showing the same local codebase to work simultaneously.
+7. **Review Implementation** – The reviewer agent reads the task file to understand what was supposed to be implemented, then:
+   - Verifies all acceptance criteria are met
+   - Reviews all code changes listed in the task file
+   - Checks that the implementation follows the Definition of Done
+   - Validates that tests are meaningful and would actually fail if the feature broke
+   - Ensures no shortcuts were taken that compromise code quality
+8. **Review Outcome** – The reviewer either:
+   - **Approves**: Task status changes to _Done_, ready for commit
+   - **Requests Changes**: Task status returns to _In Progress_ with specific feedback documented in the task file
+
+### Phase 3: Finalization
+
+9. **Review and Check-in** – Once approved by the reviewer agent, the human reviews the result. If accepted, the work is committed to the repository.
 
 ## Step 5: Retrospective
 

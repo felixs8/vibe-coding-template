@@ -16,7 +16,15 @@ _List tests that must pass or be created._
 
 ### Status
 
-_Planned / Ready / In Progress / Done._
+_Planned / Ready / In Progress / In Review / Done._
+
+### Implementation Details
+
+_Document all files changed, created, or deleted during implementation._
+
+### Review Notes
+
+_Space for reviewer agent to document findings and feedback._
 
 ### References
 
@@ -43,6 +51,17 @@ Set up the basic structure for the frontend and backend of the project. Implemen
 ### Status
 
 Done
+
+### Implementation Details
+
+- Created `/frontend/` folder with basic React structure
+- Created `/backend/` folder with Express server setup
+- Modified `/frontend/src/App.js` to display "My Bookstore" headline
+- Added test in `/tests/headline.test.js` to verify headline display
+
+### Review Notes
+
+**Reviewer:** Verified all acceptance criteria met. Checked that the test actually fails when headline text is changed. Code quality is good, no shortcuts taken. Ready for commit.
 
 ### References
 

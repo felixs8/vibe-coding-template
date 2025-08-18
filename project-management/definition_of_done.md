@@ -18,6 +18,10 @@ _List which automated tests must pass._
 
 _Specify required documentation updates._
 
+### Review Process
+
+_Define review requirements and quality checks._
+
 ---
 
 ## Example (delete if not needed)
@@ -44,6 +48,14 @@ Definition of Done for a hypothetical "Bookstore Web App".
 - `documentation.md` updated with new files and features.
 - API endpoints documented with examples.
 
+### Review Process
+
+- All implementation details documented in the task file.
+- Code reviewed by dedicated reviewer agent.
+- Reviewer has verified all acceptance criteria are met.
+- Tests validated to ensure they would fail if feature broke.
+- No quality shortcuts identified.
+
 ---
 
 ## Further Suggestions
@@ -54,7 +66,7 @@ Linting, formatting, static analysis checks.
 
 ### Review
 
-Peer review or approval required.
+Peer review or approval required (implemented above as standard process).
 
 ### CI/CD
 
