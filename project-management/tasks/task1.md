@@ -28,18 +28,17 @@ _Link to code, docs, or related tasks._
 
 ### Description
 
-Implement the book catalog API with mock data.
+Set up the basic structure for the frontend and backend of the project. Implement a simple headline display: "My Bookstore".
 
 ### Acceptance Criteria
 
-- Endpoint `GET /api/books` returns a JSON array of books.
-- Each book has `id`, `title`, `author`, and `price`.
-- Automated tests verify response format and non-empty results.
+- Frontend displays the headline "My Bookstore" when the application runs.
+- Backend is initialized and ready for further development.
+- Project structure is clear and ready for future tasks.
 
 ### Automated Tests
 
-- `/tests/books.test.js` checks endpoint returns array with > 0 items.
-- Verify response includes `title` and `author`.
+- A test verifies that the headline "My Bookstore" is rendered on the main page when the app starts.
 
 ### Status
 
@@ -47,7 +46,7 @@ Done
 
 ### References
 
-- Code changes in `/backend/routes/books.js`.
+- Code changes in `/frontend/` and `/backend/` folders.
 - Tests in `/tests/books.test.js`.
 - Documentation updated in `documentation.md`.
 
