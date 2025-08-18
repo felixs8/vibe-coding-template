@@ -66,8 +66,8 @@ The documentation artifact describes the **current state of the system**. It com
 
 It may include:
 
-- A list of files and their purpose.
 - Features currently implemented.
+- A list of files and their purpose.
 - Known placeholders or temporary code marked for removal.
 - Acceptance criteria and the location of automated tests.
 - A history of tasks completed so far.

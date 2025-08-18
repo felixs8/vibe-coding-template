@@ -2,13 +2,13 @@
 
 ## Documentation (fill in for this project)
 
-### File Index
-
-_List project files and their purpose._
-
 ### Implemented Features
 
 _Describe what features exist right now._
+
+### File Index
+
+_List project files and their purpose._
 
 ### Placeholders
 
@@ -28,18 +28,18 @@ _Record tasks completed so far._
 
 Documentation for a hypothetical "Bookstore Web App".
 
+### Implemented Features
+
+- User can see a list of books from mock data.
+- Search by title.
+- Basic layout with navigation bar.
+
 ### File Index
 
 - `/frontend/src/App.js` – main React app entry.
 - `/backend/server.js` – Express server setup.
 - `/backend/routes/books.js` – REST endpoints for book catalog.
 - `/tests/books.test.js` – integration tests for book API.
-
-### Implemented Features
-
-- User can see a list of books from mock data.
-- Search by title.
-- Basic layout with navigation bar.
 
 ### Placeholders
 
