@@ -111,7 +111,9 @@ Like requirements, architecture is not fixed forever. It evolves as the system e
 
 ## Step 3: Definition of Done
 
-The third step defines how we decide that work is finished. This is written down in the **definition of done artifact**.
+The third step defines how we decide that work is finished. Here the AI agent takes the role of **Quality Engineer** to establish quality standards and propose comprehensive Definition of Done criteria covering build, testing, documentation, and review processes.
+
+The result is the **definition of done artifact**, a document that serves as the quality contract for every task and gives the reviewer agent clear criteria to validate against.
 
 ## Step 4: Task Cycle with Review Process
 
