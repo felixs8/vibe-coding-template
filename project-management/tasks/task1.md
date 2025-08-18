@@ -1,6 +1,17 @@
 # Task 1
 
-### Description
-*Describe what this task is about.*
+## Description
+TBD.
 
-...
+## Acceptance Criteria
+- Criterion 1
+- Criterion 2
+- Automated tests: list files and cases
+
+## Status
+Planned
+
+## References
+- Code changes: TBD
+- Tests: TBD
+- Documentation: TBD

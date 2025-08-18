@@ -1,6 +1,9 @@
 # Architecture
 
-### Tech Stack
-*List the technologies you will use.*
+Purpose: describe how we plan to build the system.
 
-...
+- Tech stack choices:
+- High-level components:
+- Data flows / APIs:
+- Risks and constraints:
+- Open questions:
