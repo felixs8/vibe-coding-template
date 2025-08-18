@@ -119,6 +119,8 @@ The result is the **definition of done artifact**, a document that serves as the
 
 Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task and includes a dedicated review phase to ensure code quality.
 
+Small increments reduce risk and complexity while enabling faster feedback and easier debugging when issues arise. By focusing on one manageable change at a time, both the development process and code quality become more predictable and maintainable.
+
 ### Phase 1: Planning and Implementation
 
 1. **Analysis and Planning** – The AI agent and the vibe coder decide what the next task should be. The AI challenges the scope, suggests smaller steps, and asks clarifying questions.
