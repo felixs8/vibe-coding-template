@@ -51,10 +51,8 @@ Definition of Done for a hypothetical "Bookstore Web App".
 ### Review Process
 
 - All implementation details documented in the task file.
-- Code reviewed by dedicated reviewer agent.
-- Reviewer has verified all acceptance criteria are met.
+- Vibe coder has reviewed and verified all acceptance criteria are met.
 - Tests validated to ensure they would fail if feature broke.
-- No quality shortcuts identified.
 
 ---
 

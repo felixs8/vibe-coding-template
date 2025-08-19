@@ -76,26 +76,17 @@ Documentation is updated incrementally, task by task.
 
 ### Tasks in Detail
 
-Tasks are the **unit of progress**. Every task describes one increment of work and records its own outcome, including the review process.
+Tasks are the **unit of progress**. Every task describes one increment of work and records its own outcome.
 
 - Each task is stored as a separate file in the repository.
 - Files are named and ordered numerically: `task1.md`, `task2.md`, `task3.md`, and so on.
 - A task file contains:
   - The description of the task.
   - Its acceptance criteria (including which are automated).
-  - Its status (_Planned_, _Ready_, _In Progress_, _In Review_, _Done_).
   - Implementation details documenting all files changed.
-  - Review notes from the reviewer agent.
   - References to code, tests, and documentation updated by this task.
 
-The review process ensures code quality by having a dedicated reviewer agent validate that:
-
-- All acceptance criteria are truly met
-- Tests are meaningful and would fail if the feature broke
-- No shortcuts were taken that compromise quality
-- The Definition of Done is satisfied
-
-Together the tasks form a step-by-step history of how the product was built, including the quality assurance process.
+Together the tasks form a step-by-step history of how the product was built.
 
 ## Step 1: Business Analysis
 
@@ -115,36 +106,18 @@ The third step defines how we decide that work is finished. Here the AI agent ta
 
 The result is the **definition of done artifact**, a document that serves as the quality contract for every task and gives the reviewer agent clear criteria to validate against.
 
-## Step 4: Task Cycle with Review Process
-
-Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task and includes a dedicated review phase to ensure code quality.
+## Step 4: Task Cycle
 
 Small increments reduce risk and complexity while enabling faster feedback and easier debugging when issues arise. By focusing on one manageable change at a time, both the development process and code quality become more predictable and maintainable.
 
-### Phase 1: Planning and Implementation
+Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task.
 
 1. **Analysis and Planning** – The AI agent and the vibe coder decide what the next task should be. The AI challenges the scope, suggests smaller steps, and asks clarifying questions.
 2. **Acceptance Criteria** – Once the task is clear, acceptance criteria are written. Some of these criteria will be automated tests. When the criteria are defined and agreed on, the task is marked _Ready_.
 3. **Implementation** – The AI agent acting as **coder** carries out the work. It ensures that the project builds, all relevant tests pass, and the definition of done is satisfied.
 4. **Documentation Update** – As part of the task, the documentation artifact is updated.
-5. **Task File Update** – The coder documents all changes made, including which files were modified, created, or deleted. The task status is changed to _In Review_.
-
-### Phase 2: Review Process
-
-6. **Switch to Reviewer Agent** – A second AI agent takes the role of **reviewer**. This can be done in a separate VS Code window showing the same local codebase to work simultaneously.
-7. **Review Implementation** – The reviewer agent reads the task file to understand what was supposed to be implemented, then:
-   - Verifies all acceptance criteria are met
-   - Reviews all code changes listed in the task file
-   - Checks that the implementation follows the Definition of Done
-   - Validates that tests are meaningful and would actually fail if the feature broke
-   - Ensures no shortcuts were taken that compromise code quality
-8. **Review Outcome** – The reviewer either:
-   - **Approves**: Task status changes to _Done_, ready for commit
-   - **Requests Changes**: Task status returns to _In Progress_ with specific feedback documented in the task file
-
-### Phase 3: Finalization
-
-9. **Review and Check-in** – Once approved by the reviewer agent, the human reviews the result. If accepted, the work is committed to the repository.
+5. **Task File Update** – The coder documents all changes made, including which files were modified, created, or deleted.
+6. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
 
 ## Step 5: Retrospective
 
