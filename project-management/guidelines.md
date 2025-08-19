@@ -113,11 +113,12 @@ Small increments reduce risk and complexity while enabling faster feedback and e
 Development proceeds in small, repeatable cycles. Each cycle focuses on exactly one task.
 
 1. **Analysis and Planning** – The AI agent and the vibe coder decide what the next task should be. The AI challenges the scope, suggests smaller steps, and asks clarifying questions.
-2. **Acceptance Criteria** – Once the task is clear, acceptance criteria are written. Some of these criteria will be automated tests. When the criteria are defined and agreed on, the task is marked _Ready_.
-3. **Implementation** – The AI agent acting as **coder** carries out the work. It ensures that the project builds, all relevant tests pass, and the definition of done is satisfied.
-4. **Documentation Update** – As part of the task, the documentation artifact is updated.
-5. **Task File Update** – The coder documents all changes made, including which files were modified, created, or deleted.
-6. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
+2. **Acceptance Criteria** – Once the task is clear, acceptance criteria are written. Some of these criteria will be automated tests.
+3. **Architecture Review** – Before implementation, review if the planned task requires updates to the architecture artifact. As implementation details become clearer, architectural decisions may need refinement or new technical choices may emerge.
+4. **Implementation** – When the vibe coder decides the task is ready, they give the command to implement to the AI agent. The AI agent carries out the work, ensuring that the project builds, all relevant tests pass, and the definition of done is satisfied.
+5. **Documentation Update** – As part of the task, the documentation artifact is updated.
+6. **Task File Update** – The AI agent documents all changes made, including which files were modified, created, or deleted.
+7. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
 
 ## Step 5: Retrospective
 
