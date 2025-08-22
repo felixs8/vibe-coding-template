@@ -1,104 +1,55 @@
-```markdown
 # Current Architecture
 
-## Current Architecture (fill in for this project)
+Template for a nextjs tailwind daisui app created with vibecoding. Remove this text and describe the project in one sentance.
 
-### Implemented Features
+## Implemented Features
 
-_Describe what features exist right now._
+- **Homepage with DaisyUI Hero Component**: Landing page displays "Hello World" with centered hero layout
 
-### File Index
+## Current Techstack
 
-_List project files and their purpose._
+- **Next.js App Router Setup**: Modern Next.js 15+ with App Router architecture
+- **Tailwind + DaisyUI Styling**: Utility-first CSS with component library integration
+- **Cypress Testing Suite**: Both E2E and component testing configured and working
+- **TypeScript Support**: Full TypeScript configuration across the project
 
-### Placeholders
+## File Index
 
-_Note temporary code or stubs to remove later._
+### Components
 
-### Acceptance Criteria and Tests
+- `/app/page.tsx` – Home component with DaisyUI hero section
 
-_List acceptance criteria and where automated tests live._
+### E2E Tests
 
-### Task History
+- `/cypress/e2e/helloWorld.cy.ts` – E2E test for homepage functionality
 
-_Record tasks completed so far._
+### Component Test
 
----
-
-## Example (delete if not needed)
-
-Documentation for a hypothetical "Bookstore Web App".
-
-### Implemented Features
-
-- User can see a list of books from mock data.
-- Search by title.
-- Basic layout with navigation bar.
-
-### File Index
-
-- `/frontend/src/App.js` – main React app entry.
-- `/backend/server.js` – Express server setup.
-- `/backend/routes/books.js` – REST endpoints for book catalog.
-- `/tests/books.test.js` – integration tests for book API.
-
-### Placeholders
-
-- Payment integration stub in `/backend/routes/orders.js`.
-- User authentication module is a hardcoded token.
-
-### Acceptance Criteria and Tests
-
-- `/tests/books.test.js` covers `GET /api/books`.
-- `/tests/orders.test.js` covers order creation (currently skipped).
-
-### Task History
-
-- Task 1: Setup repo and skeleton.
-- Task 2: Implement book catalog API with mock data.
-- Task 3: Add frontend to display book list.
-
----
-
-## Further Suggestions
-
-### System Overview
-
-Diagram of modules and their relations.
-
-### API Documentation
-
-Endpoints, request/response examples.
+- `/cypress/component/Home.cy.tsx` – Component test for Home component
 
 ### Configuration
 
-How to set up environment variables, configs.
+- `/package.json` – Project dependencies and npm scripts configuration
+- `/cypress.config.ts` – Cypress testing configuration
+- `/next.config.ts` – Next.js configuration with TypeScript
+- `/tsconfig.json` – TypeScript compiler configuration
+- `/postcss.config.mjs` – PostCSS configuration for Tailwind CSS
+- `/eslint.config.mjs` – ESLint configuration for code quality
 
-### Deployment Notes
+## Package.json Scripts
 
-How to deploy to environments.
+- `npm run dev` – Start development server with Turbopack
+- `npm run build` – Build production application with Turbopack
+- `npm run start` – Start production server
+- `npm run test` – Run component tests + E2E tests (with server startup)
+- `npm run cypress:open` – Open Cypress interactive test runner
+- `npm run cypress:run` – Run Cypress E2E tests headlessly
+- `npm run cypress:component` – Run Cypress component tests headlessly
 
-### Known Issues
+## Placeholders
 
-List current issues and workarounds.
+- Content in hero section is placeholder "Hello World" text
+- No actual business logic implemented yet
+- No database or API integration
 
-### Dependencies
-
-Important libraries, versions, licensing.
-
-### Change Log
-
-High-level summary of major changes.
-
-### Glossary
-
-Define important domain terms.
-
-### Future Plans
-
-What’s coming next.
-
-### References
-
-Links to specs, designs, external docs.
-```
+## Task History

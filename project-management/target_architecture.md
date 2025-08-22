@@ -1,29 +1,33 @@
-```markdown
-# Target Architecture
+# Architecture
 
-## Target Architecture (fill in for this project)
+## Tech Stack
 
-### Tech Stack
+- Frontend: React with TailwindCSS
+- Backend: Node.js with Express
+- Database: PostgreSQL
+- Authentication: JWT
+- Deployment: Docker + Kubernetes
 
-- **Frontend Framework**: Next.js 14+ (App Router)
-- **Deployment & Hosting**: Vercel (optimized for Next.js)
-- **UI Styling**: Tailwind CSS + DaisyUI component library
-- **Testing**: Cypress for E2E testing and component testing
-- **TypeScript**: Full TypeScript support across the stack
+## High-level Components
 
-### High-level Components
+- Web frontend serving React app
+- REST API backend
+- Database schema with books, users, and orders
+- Payment service integration
 
-_Describe the major building blocks of the system based on your specific project needs._
+## Data Flows / APIs
 
-### Data Flows / APIs
+1. User requests book list from frontend.
+2. Frontend queries `/api/books`.
+3. Backend queries PostgreSQL and returns JSON.
+4. Payment requests go from backend to provider.
 
-_Outline how data moves through the system and which APIs exist._
+## Risks and Constraints
 
-### Risks and Constraints
+- Payment provider integration may introduce latency.
+- Scalability for catalog search needs to be validated.
 
-_Note risks, technical constraints, or limitations._
+## Open Questions
 
-### Open Questions
-
-_Capture architectural decisions still to be made._
-```
+- Should we use GraphQL instead of REST?
+- Should we add caching in front of the DB?
