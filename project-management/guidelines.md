@@ -8,6 +8,10 @@ The artifacts exist to provide **context**. Any AI agent that joins the project 
 
 This makes it possible to switch AI agents at any time. The human does not need to supply missing context; the artifacts carry it. The repository itself becomes the single source of truth for both product knowledge and process knowledge.
 
+## Incremental development
+
+Development proceeds in small, self-contained increments. For each feature we create a task file that specifies the next increment and its acceptance criteria. After implementing a task we ensure the repository remains in a stable, high-quality state: the project builds, automated tests and a brief smoke test pass, and the `current_architecture` (and documentation) are updated. Quality is enforced by the Definition of Done artifact — a checklist run for every task. This keeps progress predictable, reversible, and preserves steady productivity.
+
 ## Artifacts and Their Role
 
 Artifacts are the backbone of the workflow. Each artifact lives in the Git repository, can change over time, and is accessible to everyone involved.
@@ -17,8 +21,8 @@ The main artifacts are:
 1. **This Guideline Document** – explains the process and the role of each artifact.
 2. **Requirements** – what we want to build.
 3. **Architecture** – how we intend to build it.
-4. **Definition of Done** – what it means for work to be complete.
-5. **Documentation** – what the system currently contains and how it works.
+4. **Documentation** – what the system currently contains and how it works.
+5. **Definition of Done** – what it means for work to be complete.
 6. **Tasks** – the full list of increments we have given to the AI coder.
 
 ### Guideline Document in Detail
@@ -47,19 +51,6 @@ The target architecture artifact explains **how** we plan to build the system. I
 
 The target architecture document ensures that every contributor works from the same technical baseline.
 
-### Definition of Done in Detail
-
-The definition of done artifact describes **what it means for work to be finished**. It sets the quality standard for tasks.
-
-Examples of items that may be included:
-
-- The project builds without errors.
-- The acceptance criteria for the task are fulfilled.
-- All automated tests pass, including those from previous tasks.
-- The documentation artifact is updated.
-
-The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
-
 ### Current Architecture in Detail
 
 The current architecture artifact describes the **current state of the system**. It complements the requirements (future) and the target architecture (design) by recording what actually exists now.
@@ -73,6 +64,19 @@ It may include:
 - A history of tasks completed so far.
 
 The current architecture is updated incrementally, task by task.
+
+### Definition of Done in Detail
+
+The definition of done artifact describes **what it means for work to be finished**. It sets the quality standard for tasks.
+
+Examples of items that may be included:
+
+- The project builds without errors.
+- The acceptance criteria for the task are fulfilled.
+- All automated tests pass, including those from previous tasks.
+- The documentation artifact is updated.
+
+The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
 ### Tasks in Detail
 
