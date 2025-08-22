@@ -6,10 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "test": "start-server-and-test dev http://localhost:3000 cypress:run",
+    "test": "npm run cypress:component && start-server-and-test dev http://localhost:3000 cypress:run",
     "lint": "eslint",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:component": "cypress run --component"
   },
   "dependencies": {
     "cypress": "^15.0.0",
