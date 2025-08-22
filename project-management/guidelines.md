@@ -10,7 +10,7 @@ This makes it possible to switch AI agents at any time. The human does not need 
 
 ## Incremental development
 
-Development proceeds in small, self-contained increments. For each feature we create a task file that specifies the next increment and its acceptance criteria. After implementing a task we ensure the repository remains in a stable, high-quality state: the project builds, automated tests and a brief smoke test pass, and the `current_architecture` are updated. Quality is enforced by the Definition of Done artifact — a checklist run for every task. This keeps progress predictable, reversible, and preserves steady productivity.
+Development proceeds in small, self-contained increments. For each feature we create a task file that specifies the next increment and its acceptance criteria. After implementing a task we ensure the repository remains in a stable, high-quality state: the project builds, automated tests and a brief smoke test pass, and the `current_architecture.md` artifact is updated. Quality is enforced by the Definition of Done artifact — a checklist run for every task. This keeps progress predictable, reversible, and preserves steady productivity.
 
 ## Artifacts and Their Role
 
@@ -74,7 +74,7 @@ Examples of items that may be included:
 - The project builds without errors.
 - The acceptance criteria for the task are fulfilled.
 - All automated tests pass, including those from previous tasks.
-- The documentation artifact is updated.
+- The current architecture artifact is updated.
 
 The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
