@@ -37,15 +37,15 @@ The requirements artifact describes **what** we want to build. It is the referen
 
 The requirements file is not a contract but a living plan. It is always valid only for the current state of the project.
 
-### Architecture in Detail
+### Target Architecture in Detail
 
-The architecture artifact explains **how** we plan to build the system. It documents the technical foundation and the structural choices.
+The target architecture artifact explains **how** we plan to build the system. It documents the technical foundation and the structural choices.
 
 - It lists the chosen technology stack.
 - It describes the overall system structure.
 - It may evolve as the system grows and constraints change.
 
-The architecture document ensures that every contributor works from the same technical baseline.
+The target architecture document ensures that every contributor works from the same technical baseline.
 
 ### Definition of Done in Detail
 
@@ -60,9 +60,9 @@ Examples of items that may be included:
 
 The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
-### Documentation in Detail
+### Current Architecture in Detail
 
-The documentation artifact describes the **current state of the system**. It complements the requirements (future) and the architecture (design) by recording what actually exists now.
+The current architecture artifact describes the **current state of the system**. It complements the requirements (future) and the target architecture (design) by recording what actually exists now.
 
 It may include:
 
@@ -72,7 +72,7 @@ It may include:
 - Acceptance criteria and the location of automated tests.
 - A history of tasks completed so far.
 
-Documentation is updated incrementally, task by task.
+The current architecture is updated incrementally, task by task.
 
 ### Tasks in Detail
 
@@ -94,11 +94,11 @@ The first step is to clarify the requirements. In this phase, the AI agent takes
 
 The requirements document does not have to be complete. It is expected to change as we learn more. What matters is that we always have a shared artifact that reflects our current understanding of the system.
 
-## Step 2: Architecture
+## Step 2: Target Architecture
 
-Once we know what to build, we move to architecture. Here the AI agent acts as system architect. The result is the **architecture artifact**, a document describing the chosen technology stack and the structural design of the application.
+Once we know what to build, we move to target architecture. Here the AI agent acts as system architect. The result is the **target architecture artifact**, a document describing the chosen technology stack and the structural design of the application.
 
-Like requirements, architecture is not fixed forever. It evolves as the system evolves. The document ensures that every contributor has a common picture of the technical foundation.
+Like requirements, the target architecture is not fixed forever. It evolves as the system evolves. The document ensures that every contributor has a common picture of the technical foundation.
 
 ## Step 3: Definition of Done
 
