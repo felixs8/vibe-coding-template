@@ -23,7 +23,9 @@ The artifacts are:
 3. **Target Architecture** – how we intend to build it.
 4. **Current Architecture** – what the system currently contains and how it works.
 5. **Definition of Done** – what it means for work to be complete.
-6. **Tasks** – the full list of increments we have given to the AI coder.
+6. **Coding Style** – how we write code, including conventions, testing philosophy, and quality standards.
+7. **Documentation Style** – how we write and maintain documentation to avoid bloat while preserving essential information.
+8. **Tasks** – the full list of increments we have given to the AI coder.
 
 ### Guideline Document in Detail
 
@@ -78,6 +80,33 @@ Examples of items that may be included:
 
 The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
+### Coding Style in Detail
+
+The coding style artifact establishes **how we write code** across the entire project. It prevents inconsistency and reduces the need to repeat coding preferences to AI agents.
+
+It may include:
+
+- Component creation guidelines (when to extract reusable components).
+- Naming conventions and patterns specific to the chosen technology stack.
+- Testing philosophy (focus on functionality, avoid repetitive assertions).
+- Code organization and quality standards.
+- Language-specific best practices.
+
+This artifact ensures that all AI agents follow the same coding standards without needing repeated instruction.
+
+### Documentation Style in Detail
+
+The documentation style artifact defines **how we write and maintain all project documentation**. It prevents documentation bloat while ensuring essential information remains accessible.
+
+It covers:
+
+- Conciseness principles (what to include and what to avoid).
+- Artifact-specific guidelines for requirements, architecture, and task documentation.
+- Standards for structure, formatting, and content organization.
+- Anti-patterns that lead to maintenance problems or information overload.
+
+This artifact helps AI agents produce focused, useful documentation without dumping excessive context.
+
 ### Tasks in Detail
 
 Tasks are the **unit of progress**. Every task describes one increment of work and records its own outcome.
@@ -91,6 +120,8 @@ Tasks are the **unit of progress**. Every task describes one increment of work a
   - References to code, tests, and documentation updated by this task.
 
 Together the tasks form a step-by-step history of how the product was built.
+
+
 
 ## Step 1: Business Analysis
 
@@ -165,7 +196,29 @@ Please:
 Focus on criteria that ensure each task leaves the repository in a stable, runnable state.
 ```
 
-## Step 4: Planning
+## Step 4: Establish Standards
+
+Before beginning development, we establish the coding and documentation standards that will guide all subsequent work. In this phase, the AI agent takes the role of **Technical Standards Advisor**. The purpose is to define _how_ we will write code and documentation to maintain consistency and quality throughout the project.
+
+This step produces the **coding style artifact** and **documentation style artifact**. These documents capture preferences for code organization, naming conventions, testing approaches, and documentation structure that would otherwise need to be communicated repeatedly to each AI agent.
+
+Prompt suggestion (copy-paste):
+
+```
+You are acting as a Technical Standards Advisor. Read the guidelines.md, targer_architecture.md and requirements.md files to understand the vibe coding process. We are in Step 4: Establish Standards.
+
+Your task: Create both coding_style.md and documentation_style.md based on my preferences.
+
+My preferences:
+- [Your coding and documentation preferences]
+
+Please:
+1. Create coding_style.md and documentation_style.md files
+2. Ask clarifying questions about missing preferences
+3. Focus on preventing repeated instructions to AI agents
+```
+
+## Step 5: Planning
 
 This step focuses on deciding what to build next and preparing the task. The AI agent takes the role of **Product Owner**.
 
@@ -177,7 +230,7 @@ This step focuses on deciding what to build next and preparing the task. The AI 
 Example prompt 1 (backlog creation, copy-paste):
 
 ```
-You are acting as a Product Owner. Read the project files: guidelines.md, requirements.md, target_architecture.md, and current_architecture.md to understand the current project state.
+You are acting as a Product Owner. Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, coding_style.md, and documentation_style.md to understand the current project state.
 
 Task: Create a prioritized backlog of potential tasks we could implement next.
 
@@ -225,23 +278,45 @@ Example prompt (implementation, copy-paste):
 ```
 You are acting as a Programmer. I want you to implement taskX.md (replace X with the actual task number).
 
-Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md and definition_of_done to understand the current project state.
+Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
 
-Task: Implement the planned task according to the Definition of Done.
+Task: Implement the planned task according to the Definition of Done and coding standards.
+
+Please:
+## Step 6: Implementation
+
+Here we actually implement the planned task. The AI agent takes the role of **Programmer**. Implementation proceeds with careful attention to quality and the Definition of Done.
+
+1. **Implementation** – When the vibe coder decides the task is ready, they give the command to implement to the AI agent. The AI agent carries out the work, ensuring that the project builds, all relevant tests pass, and the definition of done is satisfied.
+2. **Documentation Update** – As part of the task, the current_architecture artifact is updated.
+3. **Task File Update** – The AI agent documents all changes made, including which files were modified, created, or deleted.
+4. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
+
+Example prompt (implementation, copy-paste):
+
+```
+You are acting as a Programmer. I want you to implement taskX.md (replace X with the actual task number).
+
+Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
+
+Task: Implement the planned task according to the Definition of Done and coding standards.
 
 Please:
 1. Read the task file to understand all acceptance criteria
 2. Implement the feature/changes needed to satisfy all criteria
-3. Ensure the project builds without errors
-4. Create/update automated tests for criteria marked as testable
-5. Update current_architecture.md with new features and file changes
-6. Update the task file with implementation notes and file changes
-7. Ensure all Definition of Done requirements are met
+3. Follow the established coding_style.md guidelines
+4. Ensure the project builds without errors
+5. Create/update automated tests for criteria marked as testable
+6. Update current_architecture.md following documentation_style.md guidelines
+7. Update the task file with implementation notes and file changes
+8. Ensure all Definition of Done requirements are met
 ```
 
-## Step 6: Retrospective
+## Step 7: Retrospective
 
-After each task, there may be a short retrospective. In this step we review whether the process or any artifact needs to change. Requirements, architecture, definition of done, documentation, or task files may all be adjusted. The retrospective ensures that the process itself improves along with the product.
+After each task, there may be a short retrospective. In this step we review whether the process or any artifact needs to change. Requirements, architecture, definition of done, coding style, documentation style, or task files may all be adjusted. The retrospective ensures that the process itself improves along with the product.
+
+Most changes to the coding and documentation standards will typically emerge from retrospectives as the team learns what works best for the specific project and identifies patterns that need to be addressed.
 
 Prompt suggestion (copy-paste):
 
