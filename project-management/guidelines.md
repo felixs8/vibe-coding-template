@@ -255,7 +255,7 @@ Task: Create the task file for the next sequential task number.
 
 Please:
 1. Check current_architecture.md to see which task number is next (look at task history)
-2. Write a complete taskX.md file following the template structure (where X is the next number)
+2. Write a complete taskX.md file following the guidelines in documentation-style.md
 3. Include specific, testable acceptance criteria
 4. Identify which acceptance criteria should be automated tests
 5. Ensure the task is small enough to complete in one increment
