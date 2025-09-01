@@ -230,7 +230,7 @@ This step focuses on deciding what to build next and preparing the task. The AI 
 Example prompt 1 (backlog creation, copy-paste):
 
 ```
-You are acting as a Product Owner. Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, coding_style.md, and documentation_style.md to understand the current project state.
+You are acting as a Product Owner. Read the project files: requirements.md, target_architecture.md, current_architecture.md, coding_style.md, and documentation_style.md to understand the current project state.
 
 Task: Create a prioritized backlog of potential tasks we could implement next.
 
@@ -249,7 +249,7 @@ Focus on suggestions that build incrementally toward core user value.
 Example prompt 2 (task file creation, copy-paste):
 
 ```
-You are acting as a Product Owner. We've decided to implement [describe the chosen feature from backlog] as our next task.
+You are acting as a Product Owner. We've decided to implement ### as our next task.
 
 Task: Create the task file for the next sequential task number.
 
@@ -276,41 +276,19 @@ Here we actually implement the planned task. The AI agent takes the role of **Pr
 Example prompt (implementation, copy-paste):
 
 ```
-You are acting as a Programmer. I want you to implement taskX.md (replace X with the actual task number).
+You are acting as a Programmer. I want you to implement taskX.md.
 
-Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
+Read the project files: requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
 
-Task: Implement the planned task according to the Definition of Done and coding standards.
-
-Please:
-## Step 6: Implementation
-
-Here we actually implement the planned task. The AI agent takes the role of **Programmer**. Implementation proceeds with careful attention to quality and the Definition of Done.
-
-1. **Implementation** – When the vibe coder decides the task is ready, they give the command to implement to the AI agent. The AI agent carries out the work, ensuring that the project builds, all relevant tests pass, and the definition of done is satisfied.
-2. **Documentation Update** – As part of the task, the current_architecture artifact is updated.
-3. **Task File Update** – The AI agent documents all changes made, including which files were modified, created, or deleted.
-4. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
-
-Example prompt (implementation, copy-paste):
+Task: 
+- Implement the planned task as described in the task file and in alignment with the coding_style
+- Run all check from the definition_of_done
+- update the current_architecture in alignment with the documentation_style
+- update the task file in alignment with the documentation_style
+- tell the vibe coder what has to be tested manually and how he can do it
 
 ```
-You are acting as a Programmer. I want you to implement taskX.md (replace X with the actual task number).
 
-Read the project files: guidelines.md, requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
-
-Task: Implement the planned task according to the Definition of Done and coding standards.
-
-Please:
-1. Read the task file to understand all acceptance criteria
-2. Implement the feature/changes needed to satisfy all criteria
-3. Follow the established coding_style.md guidelines
-4. Ensure the project builds without errors
-5. Create/update automated tests for criteria marked as testable
-6. Update current_architecture.md following documentation_style.md guidelines
-7. Update the task file with implementation notes and file changes
-8. Ensure all Definition of Done requirements are met
-```
 
 ## Step 7: Retrospective
 
