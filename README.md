@@ -19,6 +19,8 @@ You will find the following artifacts in this repository under `project-manageme
 - `project-management/target_architecture.md` – shows how we intend to build it.
 - `project-management/current_architecture.md` – records what exists in the system right now.
 - `project-management/definition_of_done.md` – defines what counts as finished work.
+- `project-management/coding_style.md` – establishes coding conventions and quality standards.
+- `project-management/documentation_style.md` – defines how we write and maintain documentation.
 - `project-management/tasks/` – contains one file per task, documenting progress incrementally.
 
 Reading `project-management/guidelines.md` first will help you understand the process and how to contribute.
