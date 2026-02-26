@@ -74,11 +74,8 @@ The definition of done artifact describes **what it means for work to be finishe
 Examples of items that may be included:
 
 - The project builds without errors.
-- The acceptance criteria for the task are fulfilled.
 - All automated tests pass, including those from previous tasks.
 - The current architecture artifact is updated.
-
-The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
 ### Coding Style in Detail
 
@@ -100,7 +97,7 @@ The documentation style artifact defines **how we write and maintain all project
 
 It covers:
 
-- Conciseness principles (what to include and what to avoid).
+- How to avoid bloat in AI documentation and stay concise (what to include and what to avoid).
 - Artifact-specific guidelines for requirements, architecture, and task documentation.
 - Standards for structure, formatting, and content organization.
 - Anti-patterns that lead to maintenance problems or information overload.
@@ -120,8 +117,6 @@ Tasks are the **unit of progress**. Every task describes one increment of work a
   - References to code, tests, and documentation updated by this task.
 
 Together the tasks form a step-by-step history of how the product was built.
-
-
 
 ## Step 1: Business Analysis
 
@@ -230,7 +225,15 @@ This step focuses on deciding what to build next and preparing the task. The AI 
 Example prompt 1 (backlog creation, copy-paste):
 
 ```
-You are acting as a Product Owner. Read the project files: requirements.md, target_architecture.md, current_architecture.md, coding_style.md, and documentation_style.md to understand the current project state.
+You are acting as a Product Owner.
+
+Read the project files:
+- requirements.md
+- target_architecture.md
+- current_architecture.md
+- coding_style.md
+- documentation_style.md
+to understand the current project state.
 
 Task: Create a prioritized backlog of potential tasks we could implement next.
 
@@ -249,7 +252,17 @@ Focus on suggestions that build incrementally toward core user value.
 Example prompt 2 (task file creation, copy-paste):
 
 ```
-You are acting as a Product Owner. We've decided to implement ### as our next task.
+You are acting as a Product Owner.
+
+Read the project files:
+- requirements.md
+- target_architecture.md
+- current_architecture.md
+- coding_style.md
+- documentation_style.md
+to understand the current project state.
+
+We've decided to implement ### as our next task.
 
 Task: Create the task file for the next sequential task number.
 
@@ -262,6 +275,8 @@ Please:
 6. Check if this task refinement reveals any changes needed to requirements.md or target_architecture.md - if so, update them before finalizing the task
 
 Do not write any code or example code yet - just create the task file for review.
+
+Apply documentation_style.md. Focus on WHAT to build, not HOW to build it.
 ```
 
 ## Step 5: Implementation
@@ -278,9 +293,16 @@ Example prompt (implementation, copy-paste):
 ```
 You are acting as a Programmer. I want you to implement taskX.md.
 
-Read the project files: requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
+Read the project files:
+- requirements.md
+- target_architecture.md
+- current_architecture.md
+- definition_of_done.md
+- coding_style.md
+- documentation_style.md
+to understand the current project state.
 
-Task: 
+Task:
 - Implement the planned task as described in the task file and in alignment with the coding_style
 - Run all check from the definition_of_done
 - update the current_architecture in alignment with the documentation_style
@@ -288,31 +310,3 @@ Task:
 - tell the vibe coder what has to be tested manually and how he can do it
 
 ```
-
-
-## Step 7: Retrospective
-
-After each task, there may be a short retrospective. In this step we review whether the process or any artifact needs to change. Requirements, architecture, definition of done, coding style, documentation style, or task files may all be adjusted. The retrospective ensures that the process itself improves along with the product.
-
-Most changes to the coding and documentation standards will typically emerge from retrospectives as the team learns what works best for the specific project and identifies patterns that need to be addressed.
-
-Prompt suggestion (copy-paste):
-
-```
-You are acting as a Retrospective Facilitator. Read the last 3-5 completed task files from project-management/tasks/ and project-management/guidelines.md.
-
-Your task: Facilitate a process improvement retrospective.
-
-Please:
-1. Analyze what went well and what could be improved in recent tasks
-2. Identify any recurring issues or bottlenecks
-3. Suggest 2-3 concrete process improvements
-4. Recommend updates to any artifacts (requirements, architecture, DoD, guidelines) if needed
-5. Propose metrics to track improvement in the next iteration
-
-Focus on actionable improvements that maintain quality while increasing development velocity.
-```
-
-## Summary
-
-The workflow begins with requirements and architecture, sets a definition of done, and then advances through planning and implementation cycles. Each cycle produces working software, updates artifacts, and keeps tests green. Artifacts provide continuity: they preserve context, make switching agents possible, and ensure that both the system and the process move forward in small, reliable increments.

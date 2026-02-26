@@ -5,7 +5,7 @@
 
 ### Implemented Features
 
-_Describe what features exist right now._
+_Describe what features exist right now. One bullet point per feature. No implementation details, just describe WHAT the feature is doing, not HOW_
 
 ### File Index
 
@@ -15,90 +15,11 @@ _List project files and their purpose._
 
 _Note temporary code or stubs to remove later._
 
-### Acceptance Criteria and Tests
+### Environments and Tests
 
-_List acceptance criteria and where automated tests live._
-
-### Task History
-
-_Record tasks completed so far._
-
----
-
-## Example (delete if not needed)
-
-Documentation for a hypothetical "Bookstore Web App".
-
-### Implemented Features
-
-- User can see a list of books from mock data.
-- Search by title.
-- Basic layout with navigation bar.
-
-### File Index
-
-- `/frontend/src/App.js` – main React app entry.
-- `/backend/server.js` – Express server setup.
-- `/backend/routes/books.js` – REST endpoints for book catalog.
-- `/tests/books.test.js` – integration tests for book API.
-
-### Placeholders
-
-- Payment integration stub in `/backend/routes/orders.js`.
-- User authentication module is a hardcoded token.
-
-### Acceptance Criteria and Tests
-
-- `/tests/books.test.js` covers `GET /api/books`.
-- `/tests/orders.test.js` covers order creation (currently skipped).
+_Explain how to start a local environment if possible. List where to find staging and production environment. List automated testsuits, how to start them and which environment they are testing._
 
 ### Task History
 
-- Task 1: Setup repo and skeleton.
-- Task 2: Implement book catalog API with mock data.
-- Task 3: Add frontend to display book list.
-
----
-
-## Further Suggestions
-
-### System Overview
-
-Diagram of modules and their relations.
-
-### API Documentation
-
-Endpoints, request/response examples.
-
-### Configuration
-
-How to set up environment variables, configs.
-
-### Deployment Notes
-
-How to deploy to environments.
-
-### Known Issues
-
-List current issues and workarounds.
-
-### Dependencies
-
-Important libraries, versions, licensing.
-
-### Change Log
-
-High-level summary of major changes.
-
-### Glossary
-
-Define important domain terms.
-
-### Future Plans
-
-What’s coming next.
-
-### References
-
-Links to specs, designs, external docs.
+_Record tasks completed so far. One bullet point per task_
 ```
