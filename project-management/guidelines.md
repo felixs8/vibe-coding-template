@@ -74,11 +74,8 @@ The definition of done artifact describes **what it means for work to be finishe
 Examples of items that may be included:
 
 - The project builds without errors.
-- The acceptance criteria for the task are fulfilled.
 - All automated tests pass, including those from previous tasks.
 - The current architecture artifact is updated.
-
-The definition of done may change as the team gains experience, but it always functions as the common bar for completion.
 
 ### Coding Style in Detail
 
@@ -100,7 +97,7 @@ The documentation style artifact defines **how we write and maintain all project
 
 It covers:
 
-- Conciseness principles (what to include and what to avoid).
+- How to avoid bloat in AI documentation and stay concise (what to include and what to avoid).
 - Artifact-specific guidelines for requirements, architecture, and task documentation.
 - Standards for structure, formatting, and content organization.
 - Anti-patterns that lead to maintenance problems or information overload.
@@ -121,7 +118,17 @@ Tasks are the **unit of progress**. Every task describes one increment of work a
 
 Together the tasks form a step-by-step history of how the product was built.
 
+## Steps
 
+The project is executed doing step 1-4.
+
+- step1: Business Analysis: create requirements.md
+- step2: Target Architecture: create target_archictecture.md
+- step3: Task Planning: create the next taskfile.
+- step4: Task Implementation: implement the next taskfile.
+
+Step 1 and 2 are executed once in the beginning of the project.
+Step 3 and 4 can be repeated indefinetly.
 
 ## Step 1: Business Analysis
 
@@ -129,24 +136,15 @@ The first step is to clarify the requirements. In this phase, the AI agent takes
 
 The requirements document does not have to be complete. It is expected to change as we learn more. What matters is that we always have a shared artifact that reflects our current understanding of the system.
 
-Prompt suggestion (copy-paste):
+To create the requirements, use the `/business-analysis` prompt file:
 
-```
-You are acting as a Business Analyst. Read the project-management/guidelines.md file to understand the vibe coding process. We are in Step 1: Business Analysis.
+1. **Open the Copilot Chat view** in VS Code
+2. **Type** `/business-analysis` followed by your project description
+3. **Press Enter** to execute the prompt
 
-Your task: Create the requirements.md file based on my project description below.
+The prompt file automatically reads the guidelines and helps you create a complete requirements.md file with clarifying questions and initial task suggestions.
 
-My initial project description:
-- [paste your project description here]
-- [add any specific requirements, constraints, or goals]
-
-Please:
-1. Draft a complete requirements.md file following the template structure
-2. Ask me 3-5 clarifying questions to improve our shared understanding
-3. Suggest the first 2-3 tasks that would implement core functionality
-
-Focus on being specific and testable - avoid vague requirements.
-```
+The prompt file is located at `.github/prompts/business-analysis.prompt.md`.
 
 ## Step 2: Target Architecture
 
@@ -154,71 +152,19 @@ Once we know what to build, we move to target architecture. Here the AI agent ac
 
 Like requirements, the target architecture is not fixed forever. It evolves as the system evolves. The document ensures that every contributor has a common picture of the technical foundation.
 
-Prompt suggestion (copy-paste):
+To create the target architecture, use the `/architecture` prompt file:
 
-```
-You are acting as a System Architect. Read project-management/guidelines.md and project-management/requirements.md to understand the project. We are in Step 2: Target Architecture.
+1. **Open the Copilot Chat view** in VS Code
+2. **Type** `/architecture` optionally followed by your technology preferences
+3. **Press Enter** to execute the prompt
 
-Your task: Create the target_architecture.md file.
+Example: `/architecture React, Node.js, PostgreSQL` or just `/architecture` to get recommendations.
 
-Technology preferences:
-- [Option 1: List specific technologies you want to use]
-- [Option 2: "I have limited technical knowledge - please recommend the best approach"]
+The prompt file automatically reads the guidelines and requirements, then helps you create a complete target_architecture.md file with justified technology choices and risk assessment.
 
-Please:
-1. Draft a complete target_architecture.md following the template structure
-2. Justify your key technology choices based on the requirements
-3. Identify 2-3 architectural risks and mitigation strategies
-4. Ask me any clarifying questions about technical constraints or preferences
+The prompt file is located at `.github/prompts/architecture.prompt.md`.
 
-Focus on creating a foundation that supports the requirements and enables incremental development.
-```
-
-## Step 3: Definition of Done
-
-The third step defines how we decide that work is finished. Here the AI agent takes the role of **Quality Engineer** to establish quality standards and propose comprehensive Definition of Done criteria covering build, testing, documentation, and review processes.
-
-The result is the **definition of done artifact**, a document that serves as the quality contract for every task and gives the programmer agent clear criteria to validate against.
-
-Prompt suggestion (copy-paste):
-
-```
-You are acting as a Quality Engineer. Read project-management/guidelines.md, project-management/requirements.md, and project-management/target_architecture.md to understand the project. We are in Step 3: Definition of Done.
-
-Your task: Create the definition_of_done.md file that defines quality standards for each task.
-
-Please:
-1. Draft a complete definition_of_done.md following the template structure
-2. Include specific, measurable criteria for: Build, Acceptance Criteria, Automated Tests, Documentation, Review Process
-3. Propose a simple smoke test approach that validates core functionality after each task
-4. Suggest quality gates that prevent common shortcuts or technical debt
-
-Focus on criteria that ensure each task leaves the repository in a stable, runnable state.
-```
-
-## Step 4: Establish Standards
-
-Before beginning development, we establish the coding and documentation standards that will guide all subsequent work. In this phase, the AI agent takes the role of **Technical Standards Advisor**. The purpose is to define _how_ we will write code and documentation to maintain consistency and quality throughout the project.
-
-This step produces the **coding style artifact** and **documentation style artifact**. These documents capture preferences for code organization, naming conventions, testing approaches, and documentation structure that would otherwise need to be communicated repeatedly to each AI agent.
-
-Prompt suggestion (copy-paste):
-
-```
-You are acting as a Technical Standards Advisor. Read the guidelines.md, targer_architecture.md and requirements.md files to understand the vibe coding process. We are in Step 4: Establish Standards.
-
-Your task: Create both coding_style.md and documentation_style.md based on my preferences.
-
-My preferences:
-- [Your coding and documentation preferences]
-
-Please:
-1. Create coding_style.md and documentation_style.md files
-2. Ask clarifying questions about missing preferences
-3. Focus on preventing repeated instructions to AI agents
-```
-
-## Step 5: Planning
+## Step 3: Task Planning
 
 This step focuses on deciding what to build next and preparing the task. The AI agent takes the role of **Product Owner**.
 
@@ -227,44 +173,38 @@ This step focuses on deciding what to build next and preparing the task. The AI 
 3. **Task Definition** – The AI agent creates a detailed task file with acceptance criteria and identifies which criteria should be automated tests.
 4. **Documentation Review** – Before implementation begins, review if the planned task requires updates to the requirements or the target architecture artifact. As implementation details become clearer, the documentation may need refinement.
 
-Example prompt 1 (backlog creation, copy-paste):
+### Backlog Creation
 
-```
-You are acting as a Product Owner. Read the project files: requirements.md, target_architecture.md, current_architecture.md, coding_style.md, and documentation_style.md to understand the current project state.
+To create a prioritized backlog, use the `/backlog` prompt file:
 
-Task: Create a prioritized backlog of potential tasks we could implement next.
+1. **Open the Copilot Chat view** in VS Code
+2. **Type** `/backlog`
+3. **Press Enter** to execute the prompt
 
-Please:
-1. Suggest 8-10 valuable features/tasks, ordered by priority
-2. Give each suggestion a clear title and 2-3 sentence description
-3. Explain the business value each would provide
-4. Indicate any dependencies between suggestions
-5. Estimate relative complexity (Small/Medium/Large)
+The prompt file automatically reads all project documentation and generates 8-10 prioritized task suggestions with business value, dependencies, and complexity estimates.
 
-Note: These are backlog suggestions, not final task numbers. Tasks will be numbered sequentially as we implement them (task1.md, task2.md, etc.).
+The prompt file is located at `.github/prompts/backlog.prompt.md`.
 
-Focus on suggestions that build incrementally toward core user value.
-```
+### Task File Creation
 
-Example prompt 2 (task file creation, copy-paste):
+To create a task file, use the `/create-task` prompt file:
 
-```
-You are acting as a Product Owner. We've decided to implement ### as our next task.
+1. **Open the Copilot Chat view** in VS Code
+2. **Type** `/create-task` followed by either:
+   - A backlog item reference (e.g., "item 3 from backlog")
+   - A task description (e.g., "user authentication with email and password")
+3. **Press Enter** to execute the prompt
 
-Task: Create the task file for the next sequential task number.
+Examples:
 
-Please:
-1. Check current_architecture.md to see which task number is next (look at task history)
-2. Write a complete taskX.md file following the guidelines in documentation-style.md
-3. Include specific, testable acceptance criteria
-4. Identify which acceptance criteria should be automated tests
-5. Ensure the task is small enough to complete in one increment
-6. Check if this task refinement reveals any changes needed to requirements.md or target_architecture.md - if so, update them before finalizing the task
+- `/create-task item 1 from backlog`
+- `/create-task add user profile page with edit functionality`
 
-Do not write any code or example code yet - just create the task file for review.
-```
+The prompt file automatically reads all project documentation, determines the next task number, and creates a complete task file with acceptance criteria and automated test identification.
 
-## Step 5: Implementation
+The prompt file is located at `.github/prompts/create-task.prompt.md`.
+
+## Step 4: Implementation
 
 Here we actually implement the planned task. The AI agent takes the role of **Programmer**. Implementation proceeds with careful attention to quality and the Definition of Done.
 
@@ -273,46 +213,18 @@ Here we actually implement the planned task. The AI agent takes the role of **Pr
 3. **Task File Update** – The AI agent documents all changes made, including which files were modified, created, or deleted.
 4. **Review and Check-in** – The vibe coder reviews the implementation, validates that all acceptance criteria are met, checks code quality, and ensures tests are meaningful. If accepted, the work is committed to the repository.
 
-Example prompt (implementation, copy-paste):
+To implement a task, use the `/implement` prompt file:
 
-```
-You are acting as a Programmer. I want you to implement taskX.md.
+1. **Open the Copilot Chat view** in VS Code
+2. **Type** `/implement taskN` (e.g., `/implement task1`, `/implement task2`)
+3. **Press Enter** to execute the prompt
 
-Read the project files: requirements.md, target_architecture.md, current_architecture.md, definition_of_done.md, coding_style.md, and documentation_style.md to understand the current project state.
+The prompt file automatically:
 
-Task: 
-- Implement the planned task as described in the task file and in alignment with the coding_style
-- Run all check from the definition_of_done
-- update the current_architecture in alignment with the documentation_style
-- update the task file in alignment with the documentation_style
-- tell the vibe coder what has to be tested manually and how he can do it
+- Reads all relevant project documentation files
+- References the specific task file
+- Instructs the AI to follow coding style and definition of done
+- Updates current architecture and task documentation
+- Provides manual testing instructions
 
-```
-
-
-## Step 7: Retrospective
-
-After each task, there may be a short retrospective. In this step we review whether the process or any artifact needs to change. Requirements, architecture, definition of done, coding style, documentation style, or task files may all be adjusted. The retrospective ensures that the process itself improves along with the product.
-
-Most changes to the coding and documentation standards will typically emerge from retrospectives as the team learns what works best for the specific project and identifies patterns that need to be addressed.
-
-Prompt suggestion (copy-paste):
-
-```
-You are acting as a Retrospective Facilitator. Read the last 3-5 completed task files from project-management/tasks/ and project-management/guidelines.md.
-
-Your task: Facilitate a process improvement retrospective.
-
-Please:
-1. Analyze what went well and what could be improved in recent tasks
-2. Identify any recurring issues or bottlenecks
-3. Suggest 2-3 concrete process improvements
-4. Recommend updates to any artifacts (requirements, architecture, DoD, guidelines) if needed
-5. Propose metrics to track improvement in the next iteration
-
-Focus on actionable improvements that maintain quality while increasing development velocity.
-```
-
-## Summary
-
-The workflow begins with requirements and architecture, sets a definition of done, and then advances through planning and implementation cycles. Each cycle produces working software, updates artifacts, and keeps tests green. Artifacts provide continuity: they preserve context, make switching agents possible, and ensure that both the system and the process move forward in small, reliable increments.
+The prompt file is located at `.github/prompts/implement.prompt.md` and can be modified if needed.
