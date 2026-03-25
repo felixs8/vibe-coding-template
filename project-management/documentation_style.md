@@ -59,3 +59,37 @@ When adding documentation, evaluate its importance within the overall context. A
 - **Update documentation with code changes**: Keep artifacts current with implementation
 - **Use meaningful commit messages**: Explain documentation changes clearly
 - **Review documentation in code reviews**: Ensure changes are consistent and necessary
+
+## SAP ABAP-Specific Documentation Rules
+
+### Class `.md` files
+
+Each class folder contains exactly one `.md` file that acts as the SE80 class frame. It must document:
+
+- The `CLASS ... DEFINITION` block (visibility, `FINAL`, `CREATE PUBLIC`)
+- All `PUBLIC SECTION` method signatures with parameter types and exceptions
+- Constants and type aliases that are part of the public interface
+- A note on any `PRIVATE` types (just acknowledge they exist; do not list them — they are implementation details)
+
+Do **not** document private method implementations in the `.md` file. Those details live in the `.abap` method body.
+
+### Database `.md` files
+
+Each DB table `.md` file must contain:
+
+- Status emoji: ✅ Created in SAP (SE11) · 🔲 Not yet created · ⚠️ Needs extension
+- Package name and delivery class
+- Domain list (name, type, length, decimals, description)
+- Data element list (name, domain, short/medium/long labels)
+- Full field list (name, key flag, data element, description)
+- Primary key statement
+- Table type name if one exists
+
+Keep the table `.md` as the single source of truth. Do not duplicate field lists in `current_architecture.md` \u2014 link to the `.md` file instead.
+
+### Task files
+
+- Write acceptance criteria as checkable statements before implementation begins.
+- Mark `[test]` on criteria that require an ABAP Unit Test.
+- Fill in **Implementation Details** and **Manual Test Instructions** after implementation, not before.
+- Use the **Out of Scope** section to prevent creep \u2014 list what was explicitly deferred.

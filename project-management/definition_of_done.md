@@ -1,15 +1,8 @@
 # Definition of Done
 
-## Definition of Done (fill in for this project)
+## Documentation
 
-### Build
-
-_Describe build requirements (e.g. compiles without errors)._
-
-### Automated Tests
-
-_List which automated test suits must pass._
-
-### Documentation
-
-_Specify required documentation updates._
+- [ ] `current_architecture.md` — Implemented Features and File Index are updated.
+- [ ] Task file — Implementation Details section lists every file created, changed, or deleted.
+- [ ] If a class was added or its public interface changed: the sibling `.md` file reflects the updated method signatures.
+- [ ] If a database table was added or changed: the sibling `.md` file reflects the current field list and status emoji (✅ / 🔲).

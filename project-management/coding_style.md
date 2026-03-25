@@ -78,26 +78,34 @@ When coding keep in mind the following limits:
 - **Keep comments current**: Update comments when code changes
 - **Document public APIs**: Provide clear documentation for interfaces that other parts of the system will use
 
-## Language-Specific Guidelines
+## ABAP-Specific Guidelines
 
-_This section should be expanded based on the chosen technology stack. Common patterns include:_
+### Class Design
 
-### General Patterns
+- **PUBLIC FINAL CREATE PUBLIC** is the default class template for new utility/service classes.
+- **CLASS-METHODS (static)** are preferred over instance methods for stateless logic. Use instance methods only when state must be maintained across calls.
+- **Private types:** Types that are pure implementation detail belong in the `PRIVATE` section and must never be referenced from outside the class.
+- **One method per `.abap` file:** Each file contains exactly one METHOD body. The class frame (DEFINITION/IMPLEMENTATION shell, all attributes, method declarations) lives in the sibling `.md` file. Always read the `.md` file before editing any method body.
 
-- **Follow established conventions**: Use the community-standard formatting, naming, and organizational patterns for the chosen language/framework
-- **Use type annotations where available**: Leverage type systems to catch errors early and improve code clarity
-- **Prefer immutability**: Use immutable data structures when possible to reduce bugs and improve predictability
-- **Handle null/undefined safely**: Use safe navigation, optional chaining, or null-checking patterns appropriate to the language
+### Parameter Naming (Hungarian Notation)
 
-## Review Checklist
+| Prefix | Meaning                              |
+| ------ | ------------------------------------ |
+| `iv_`  | Importing, passed by value           |
+| `is_`  | Importing, structure                 |
+| `it_`  | Importing, internal table            |
+| `ev_`  | Exporting, passed by value           |
+| `es_`  | Exporting, structure                 |
+| `et_`  | Exporting, internal table            |
+| `rv_`  | Returning value                      |
+| `lv_`  | Local variable                       |
+| `ls_`  | Local structure                      |
+| `lt_`  | Local internal table                 |
+| `mv_`  | Instance attribute (member variable) |
+| `gv_`  | Global variable in a report          |
 
-Before submitting any code, verify:
+### Naming Conventions
 
-- [ ] Components are created where they add value (reusability or clear responsibility)
-- [ ] Naming is clear, consistent, and follows established patterns
-- [ ] Tests focus on behavior and avoid testing implementation details
-- [ ] No duplicated assertions across tests
-- [ ] Error handling is appropriate and consistent
-- [ ] Code follows the established formatting and organizational conventions
-- [ ] Public interfaces are documented
-- [ ] Performance implications have been considered
+- **Only modify objects whose names start with `Z`** — never touch SAP standard objects.
+- Object names are ALL CAPS (SAP standard).
+- Follow the naming pattern already established in the SAP system for this project.
