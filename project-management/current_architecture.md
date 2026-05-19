@@ -8,7 +8,7 @@ Template for a nextjs tailwind daisui app created with vibecoding. Remove this t
 
 ## Current Techstack
 
-- **Next.js App Router Setup**: Modern Next.js 15+ with App Router architecture
+- **Next.js App Router Setup**: Modern Next.js 16+ with App Router architecture
 - **Tailwind + DaisyUI Styling**: Utility-first CSS with component library integration
 - **Cypress Testing Suite**: Both E2E and component testing configured and working
 - **TypeScript Support**: Full TypeScript configuration across the project

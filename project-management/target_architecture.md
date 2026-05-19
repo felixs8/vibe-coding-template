@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-- **Frontend Framework**: Next.js 14+ with App Router
+- **Frontend Framework**: Next.js 16+ with App Router
 - **Styling**: Tailwind CSS + DaisyUI component library
 - **Testing**: Cypress for E2E and component testing
 - **Language**: TypeScript for full type safety
