@@ -41,7 +41,6 @@ Template for a nextjs tailwind daisui app created with vibecoding. Remove this t
 - `npm run dev` – Start development server with Turbopack
 - `npm run build` – Build production application with Turbopack
 - `npm run start` – Start production server
-- `npm run test` – Run component tests + E2E tests (with server startup)
 - `npm run cypress:open` – Open Cypress interactive test runner
 - `npm run cypress:run` – Run Cypress E2E tests headlessly
 - `npm run cypress:component` – Run Cypress component tests headlessly

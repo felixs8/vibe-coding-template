@@ -6,7 +6,6 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "test": "npm run cypress:component && start-server-and-test dev http://localhost:3000 cypress:run",
     "lint": "eslint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
@@ -17,8 +16,7 @@
     "daisyui": "^5.5.19",
     "next": "16.2.5",
     "react": "19.2.6",
-    "react-dom": "19.2.6",
-    "start-server-and-test": "^2.1.5"
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",

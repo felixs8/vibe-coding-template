@@ -2,6 +2,10 @@
 
 ## Definition of Done for Next.js Vibe Coding Template
 
+### Precondition
+
+- **Dev Server Running**: Before executing any checklist item, verify the dev server is reachable at `http://localhost:3000`. If it is not running, stop immediately and inform the user — it is the user's responsibility to start the server before the checklist is run.
+
 ### Build
 
 - **Next.js Build**: Project builds successfully with `npm run build` using Turbopack without errors or warnings
@@ -12,7 +16,7 @@
 ### Acceptance Criteria
 
 - **All Criteria Met**: Every acceptance criterion listed in the task file is demonstrably fulfilled
-- **All Tests Pass**: Full test suite passes with `npm run test`. No existing tests broken by new changes
+- **All Tests Pass**: Component tests pass with `npm run cypress:component` and E2E tests pass with `npm run cypress:run`. No existing tests broken by new changes
 
 ### Documentation
 
