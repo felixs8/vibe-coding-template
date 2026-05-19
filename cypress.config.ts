@@ -9,14 +9,14 @@ try {
   if (typeof nextWebpack.init !== "function") {
     nextWebpack.init = () => {};
   }
-} catch (_) {
+} catch {
   // ignore if module path changes in future Next.js versions
 }
 
 export default defineConfig({
   e2e: {
     baseUrl: "http://localhost:3000",
-    setupNodeEvents(on, config) {
+    setupNodeEvents() {
       // implement node event listeners here
     },
   },
