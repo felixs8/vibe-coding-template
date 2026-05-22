@@ -31,14 +31,6 @@ When adding documentation, evaluate its importance within the overall context. A
 - **Group related features**: Organize by functional area or user journey
 - **Avoid implementation details**: Stay at the functional level
 
-### Current Architecture Documentation
-
-- **Document current state only**: Describe what exists now. Never record what was removed, replaced, or changed — that is history, not state. "Placeholder X removed" or "Y no longer exists" have no place here.
-- **Rewrite, don't annotate**: When updating after a task, revise the affected sections to reflect the new reality. Don't append change notes or transition comments.
-- **Remove outdated information**: Delete sections that no longer apply
-- **Consolidate scattered information**: Merge redundant content
-- **Update links and references**: Ensure cross-references remain valid
-
 ### Task Documentation
 
 - **What, not how**: Describe what will be achieved, not how it will be implemented. Tasks are not development plans.
