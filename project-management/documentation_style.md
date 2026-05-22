@@ -31,31 +31,17 @@ When adding documentation, evaluate its importance within the overall context. A
 - **Group related features**: Organize by functional area or user journey
 - **Avoid implementation details**: Stay at the functional level
 
-### Architecture Documentation
+### Current Architecture Documentation
 
-- **Diagram over description**: Use visual representations where they clarify structure
-- **Focus on decisions and rationale**: Explain key choices and their implications
-- **Document interfaces, not implementations**: Focus on how components interact
-- **Include non-functional requirements**: Address performance, security, scalability concerns
-
-### Task Documentation
-
-- **Acceptance criteria over descriptions**: Focus on verifiable outcomes
-- **Implementation notes, not implementation details**: Record what changed, not how every line works
-- **Reference, don't repeat**: Link to relevant code or tests instead of describing them
-- **Update current_architecture with significant changes**
-
-## Documentation Maintenance
-
-### Regular Review and Pruning
-
+- **Document current state only**: Describe what exists now. Never record what was removed, replaced, or changed — that is history, not state. "Placeholder X removed" or "Y no longer exists" have no place here.
+- **Rewrite, don't annotate**: When updating after a task, revise the affected sections to reflect the new reality. Don't append change notes or transition comments.
 - **Remove outdated information**: Delete sections that no longer apply
 - **Consolidate scattered information**: Merge redundant content
 - **Update links and references**: Ensure cross-references remain valid
-- **Verify accuracy**: Check that documentation matches current implementation
 
-### Version Control for Documentation
+### Task Documentation
 
-- **Update documentation with code changes**: Keep artifacts current with implementation
-- **Use meaningful commit messages**: Explain documentation changes clearly
-- **Review documentation in code reviews**: Ensure changes are consistent and necessary
+- **What, not how**: Describe what will be achieved, not how it will be implemented. Tasks are not development plans.
+- **Acceptance criteria over descriptions**: Focus on verifiable outcomes, not process steps.
+- **No code snippets**: Code belongs in the implementation, not the task file.
+- **Reference, don't repeat**: Link to relevant code or tests instead of describing them.
