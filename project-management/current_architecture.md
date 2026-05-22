@@ -1,6 +1,14 @@
 ```markdown
 # Current Architecture
 
+## Rules for changing this document for AI Agents
+
+- **Document current state only**: Describe what exists now. Never record what was removed, replaced, or changed — that is history, not state. "Placeholder X removed" or "Y no longer exists" have no place here.
+- **Rewrite, don't annotate**: When updating after a task, revise the affected sections to reflect the new reality. Don't append change notes or transition comments.
+- **Remove outdated information**: Delete sections that no longer apply
+- **Consolidate scattered information**: Merge redundant content
+- **Update links and references**: Ensure cross-references remain valid
+
 ## Current Architecture (fill in for this project)
 
 ### Implemented Features
@@ -9,7 +17,7 @@ _Describe what features exist right now. One bullet point per feature. No implem
 
 ### File Index
 
-_List project files and their purpose._
+_List all project files and their purpose._
 
 ### Placeholders
 
