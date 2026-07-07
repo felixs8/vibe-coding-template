@@ -150,6 +150,9 @@ const config: Config = {
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
 
+  // Jest only runs pure unit tests; Playwright specs live under e2e/ and Cypress specs use the .cy.tsx extension
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/e2e/"],
+
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 

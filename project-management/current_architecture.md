@@ -18,7 +18,9 @@ Template for a nextjs tailwind daisui app created with vibecoding. Remove this t
 
 - **Next.js App Router Setup**: Modern Next.js 16+ with App Router architecture
 - **Tailwind + DaisyUI Styling**: Utility-first CSS with component library integration
-- **Cypress Testing Suite**: Both E2E and component testing configured and working
+- **Playwright E2E Testing**: Browser-based end-to-end testing configured and working
+- **Cypress Component Testing**: Isolated React component testing configured and working
+- **Jest Unit Testing**: Pure TypeScript/JavaScript unit testing configured and working
 - **TypeScript Support**: Full TypeScript configuration across the project
 
 ## File Index
@@ -29,16 +31,22 @@ Template for a nextjs tailwind daisui app created with vibecoding. Remove this t
 
 ### E2E Tests
 
-- `/cypress/e2e/helloWorld.cy.ts` – E2E test for homepage functionality
+- `/e2e/homepage.spec.ts` – Playwright E2E test for homepage functionality
 
 ### Component Test
 
-- `/cypress/component/Home.cy.tsx` – Component test for Home component
+- `/cypress/component/Home.cy.tsx` – Cypress component test for Home component
+
+### Unit Tests
+
+- `/app/simple.test.ts` – Jest smoke test placeholder
 
 ### Configuration
 
 - `/package.json` – Project dependencies and npm scripts configuration
-- `/cypress.config.ts` – Cypress testing configuration
+- `/playwright.config.ts` – Playwright E2E testing configuration
+- `/cypress.config.ts` – Cypress component testing configuration
+- `/jest.config.ts` – Jest unit testing configuration
 - `/next.config.ts` – Next.js configuration with TypeScript
 - `/tsconfig.json` – TypeScript compiler configuration
 - `/postcss.config.mjs` – PostCSS configuration for Tailwind CSS
@@ -49,9 +57,11 @@ Template for a nextjs tailwind daisui app created with vibecoding. Remove this t
 - `npm run dev` – Start development server with Turbopack
 - `npm run build` – Build production application with Turbopack
 - `npm run start` – Start production server
-- `npm run cypress:open` – Open Cypress interactive test runner
-- `npm run cypress:run` – Run Cypress E2E tests headlessly
-- `npm run cypress:component` – Run Cypress component tests headlessly
+- `npm run test:unit` – Run Jest unit tests
+- `npm run test:component` – Run Cypress component tests headlessly
+- `npm run test:component:open` – Open Cypress interactive component test runner
+- `npm run test:e2e` – Run Playwright E2E tests (requires the dev server running at `http://localhost:3000`)
+- `npm run test:e2e:ui` – Run Playwright tests in interactive UI mode
 
 ## Placeholders
 

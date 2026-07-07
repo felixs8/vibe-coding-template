@@ -16,7 +16,7 @@
 ### Acceptance Criteria
 
 - **All Criteria Met**: Every acceptance criterion listed in the task file is demonstrably fulfilled
-- **All Tests Pass**: Component tests pass with `npm run cypress:component` and E2E tests pass with `npm run cypress:run`. No existing tests broken by new changes
+- **All Tests Pass**: Run whichever suites apply to the change and to what the project actually uses — unit tests with `npm run test:unit` (Jest), component tests with `npm run test:component` (Cypress), and E2E tests with `npm run test:e2e` (Playwright). No existing tests broken by new changes
 
 ### Documentation
 

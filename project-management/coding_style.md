@@ -34,6 +34,12 @@ When coding keep in mind the following limits:
 
 ## Testing Philosophy
 
+### Choose the Right Tool for the Layer
+
+- **Jest**: Unit tests for pure TypeScript/JavaScript logic (functions, utilities, data transforms) with no DOM or browser involved
+- **Cypress**: Component tests that mount a single React component in isolation to verify its rendering and interaction behavior
+- **Playwright**: E2E tests that drive a real browser against the running app to verify user-facing website behavior
+
 ### Test Functionality, Not Implementation Details
 
 - **Focus on behavior**: Test what the code does, not how it does it

@@ -5,8 +5,8 @@ export default function Home() {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello World</h1>
           <p className="py-6">
-            Vibe Coding Template with Next.js, Turbopack, Cypress and
-            TailwindCSS
+            Vibe Coding Template with Next.js, Turbopack, TailwindCSS,
+            Playwright, Cypress and Jest
           </p>
         </div>
       </div>
